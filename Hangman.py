@@ -1,12 +1,22 @@
 import random
 
 words = ['python', 'java', 'kotlin', 'javascript']
+print("H A N G M A N\n")
 word = random.choice(words)
 
-print('H A N G M A N\nGuess the word {}{}:'.format(word[0:3], '-' * (len(word) - 3)))
-first_try = input()
+solution = '-' * len(word)
+print(solution)
+solution = list(solution)
 
-if first_try == word:
-    print('You survived!')
-else:
-    print('You are hanged!')
+for j in range(8):
+    print("Input a letter: \n")
+
+    player_input = input()
+    if player_input in word:
+        for i in range(len(word)):
+            if word[i] == player_input:
+                solution[i] = player_input
+    print("".join(solution))
+
+print("Thanks for playing!")
+print("We'll see how well you did in the next stage")
